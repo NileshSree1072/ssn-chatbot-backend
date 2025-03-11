@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: 'https://ssn-chatbot-jn14.vercel.app' })); // Replace with your UI URL
 
-const uri = 'mongodb+srv://nilesh2312045:SreeDhana1603@ssn-chat-bot.xhpzv.mongodb.net/?retryWrites=true&w=majority&appName=ssn-chat-bot'; // Replace with your MongoDB Atlas URI
+const uri = process.env.MONGO_URI || 'mongodb+srv://nilesh2312045:SreeDhana1603@ssn-chat-bot.xhpzv.mongodb.net/?retryWrites=true&w=majority&appName=ssn-chat-bot'; // Replace with your MongoDB Atlas URI
 const client = new MongoClient(uri);
 
 async function connectToMongoDB() {
